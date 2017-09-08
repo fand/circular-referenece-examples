@@ -1,0 +1,29 @@
+{
+  "name": "circular-reference-examples",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all -p build:webpack build:browserify",
+    "build:webpack": "webpack",
+    "build:browserify": "npm-run-all -p browserify babelify",
+    "browserify": "browserify commonjs/index.js -o public/browserify/commonjs.js",
+    "babelify": "browserify esmodule/index.js -t [ babelify  --presets [ es2015 ] ] -o public/browserify/babelify.js",
+    "start": "npm-run-all -s start:node start:web",
+    "start:node": "node node/index.js",
+    "start:web": "http-server public"
+  },
+  "author": "fand <fand@gmork.in>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.0.27",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "http-server": "^0.10.0",
+    "npm-run-all": "^4.1.1",
+    "ts-loader": "^2.3.6",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.6"
+  }
+}

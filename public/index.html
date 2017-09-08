@@ -1,0 +1,10 @@
+<h1>Circular Reference Test</h1>
+
+<script>console.log('>>>> webpack');</script>
+<script src="./webpack/commonjs.js"></script>
+<script src="./webpack/esmodule.js"></script>
+<script src="./webpack/typescript.js"></script>
+
+<script>console.log('>>>> browserify');</script>
+<script src="./browserify/commonjs.js"></script>
+<script src="./browserify/babelify.js"></script>
